@@ -8,7 +8,7 @@ fi
 
 eshopSubs=${ESHOP_SUBS}
 eshopRg=${ESHOP_RG}
-eshopLocation=${ESHOP_LOCATION}
+eshopLocation=westus2
 eshopNodeCount=${ESHOP_NODECOUNT:-1}
 eshopRegistry=${ESHOP_REGISTRY}
 eshopAcrName=${ESHOP_ACRNAME}
@@ -104,7 +104,7 @@ eshopAksName="eshop-learn-aks"
 
 echo
 echo "Creating AKS cluster \"$eshopAksName\" in resource group \"$eshopRg\" and location \"$eshopLocation\"..."
-aksCreateCommand="az aks create -n $eshopAksName -g $eshopRg --node-count $eshopNodeCount --node-vm-size Standard_D2_v5 --vm-set-type VirtualMachineScaleSets -l westus2 --enable-managed-identity --generate-ssh-keys -o json"
+aksCreateCommand="az aks create -n $eshopAksName -g $eshopRg --node-count $eshopNodeCount --node-vm-size Standard_D2_v5 --vm-set-type VirtualMachineScaleSets -l $eshopLocation --enable-managed-identity --generate-ssh-keys -o json"
 echo "${newline} > ${azCliCommandStyle}$aksCreateCommand${defaultTextStyle}${newline}"
 retry=5
 aks=`$aksCreateCommand`
