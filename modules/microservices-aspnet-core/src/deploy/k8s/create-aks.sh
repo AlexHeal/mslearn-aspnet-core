@@ -8,7 +8,7 @@ fi
 
 eshopSubs=${ESHOP_SUBS}
 eshopRg=${ESHOP_RG}
-eshopLocation=westus2
+eshopLocation="westus2"
 eshopNodeCount=${ESHOP_NODECOUNT:-1}
 eshopRegistry=${ESHOP_REGISTRY}
 eshopAcrName=${ESHOP_ACRNAME}
